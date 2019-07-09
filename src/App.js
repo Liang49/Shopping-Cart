@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import NavBar from "./NavBar.js";
 
 class App extends React.Component {
@@ -11,10 +12,31 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        11
-        <NavBar />
-      </div>
+      <Router>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <ul className="navbar-nav mr-auto">
+            <li>
+              <Link to={""} className="nav-link">
+                {" "}
+                Home{" "}
+              </Link>
+            </li>
+            <li>
+              <Link to={"/contact"} className="nav-link">
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link to={"/about"} className="nav-link">
+                About
+              </Link>
+            </li>
+          </ul>
+        </nav>
+        <Switch>
+          <Route exact path="/" component={NavBar} />
+        </Switch>
+      </Router>
     );
   }
 }
