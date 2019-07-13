@@ -16,7 +16,7 @@ class App extends React.Component {
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <ul className="navbar-nav mr-auto">
             <li>
-              <Link to={""} className="nav-link">
+              <Link to={"/NavBar"} className="nav-link">
                 {" "}
                 Home{" "}
               </Link>
@@ -34,7 +34,7 @@ class App extends React.Component {
           </ul>
         </nav>
         <Switch>
-          <Route exact path="/" component={NavBar} />
+          <Route exact path="/NavBar" component={NavBar} />
         </Switch>
       </Router>
     );
